@@ -109,15 +109,15 @@ function collides(piece, x = piece.x, y = piece.y, matrix = piece.matrix) {
 function setStatus(status) {
   gameStatus = status;
   const statusMap = {
-    playing: ['?뚮젅??以?, 'live'],
-    paused: ['?쇱떆?뺤?', 'paused'],
-    gameover: ['寃뚯엫 ?ㅻ쾭', 'gameover'],
+    playing: ['플레이 중', 'live'],
+    paused: ['일시정지', 'paused'],
+    gameover: ['게임 오버', 'gameover'],
   };
   const [label, className] = statusMap[status];
   statusText.textContent = label;
   statusPill.className = `status-pill ${className}`;
-  pauseLabel.textContent = status === 'paused' ? '怨꾩냽?섍린' : '?쇱떆?뺤?';
-  pauseIcon.textContent = status === 'paused' ? '?? : '??;
+  pauseLabel.textContent = status === 'paused' ? '계속하기' : '일시정지';
+  pauseIcon.textContent = status === 'paused' ? '▶' : 'Ⅱ';
 }
 
 function resetGame() {
@@ -299,19 +299,19 @@ function updateScoreboard() {
 function showOverlay(mode) {
   overlay.classList.remove('is-hidden');
   if (mode === 'paused') {
-    overlayIcon.textContent = '??;
+    overlayIcon.textContent = 'Ⅱ';
     overlayEyebrow.textContent = 'PAUSED';
-    overlayTitle.textContent = '?좎떆 硫덉톬?댁슂';
-    overlayMessage.textContent = '以鍮꾧? ?섎㈃ 寃뚯엫??怨꾩냽?섏꽭??';
-    overlayResult.innerHTML = '?꾩옱 ?먯닔 <strong>' + score.toLocaleString('ko-KR') + '</strong>';
-    overlayAction.textContent = '怨꾩냽?섍린';
+    overlayTitle.textContent = '잠시 멈췄어요';
+    overlayMessage.textContent = '준비가 되면 게임을 계속하세요.';
+    overlayResult.innerHTML = '현재 점수 <strong>' + score.toLocaleString('ko-KR') + '</strong>';
+    overlayAction.textContent = '계속하기';
   } else {
-    overlayIcon.textContent = '??;
+    overlayIcon.textContent = '✦';
     overlayEyebrow.textContent = 'GAME OVER';
-    overlayTitle.textContent = '寃뚯엫 ?ㅻ쾭';
-    overlayMessage.textContent = '釉붾줉??留??꾧퉴吏 ?볦??듬땲??';
-    overlayResult.innerHTML = '理쒖쥌 ?먯닔 <strong>' + score.toLocaleString('ko-KR') + '</strong>';
-    overlayAction.textContent = '?ㅼ떆 ?섍린';
+    overlayTitle.textContent = '게임 오버';
+    overlayMessage.textContent = '블록이 맨 위까지 쌓였습니다.';
+    overlayResult.innerHTML = '최종 점수 <strong>' + score.toLocaleString('ko-KR') + '</strong>';
+    overlayAction.textContent = '다시 하기';
   }
 }
 
