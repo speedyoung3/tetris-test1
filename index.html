@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>TETRIS ??釉붾줉???볦븘蹂댁꽭??/title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="Tetris ??>
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <div>
+            <p class="eyebrow">CLASSIC ARCADE</p>
+            <h1>TETRIS</h1>
+          </div>
+        </div>
+        <div class="status-pill" id="status-pill"><span class="status-dot"></span><span id="status-text">?뚮젅??以?/span></div>
+      </header>
+
+      <main class="game-layout">
+        <section class="board-column" aria-label="寃뚯엫 ?곸뿭">
+          <div class="board-header">
+            <div>
+              <p class="eyebrow">STACK. CLEAR. REPEAT.</p>
+              <h2>理쒕????ㅻ옒 踰꾪뀲蹂댁꽭??/h2>
+            </div>
+            <div class="board-size">10 <span>횞</span> 20</div>
+          </div>
+
+          <div class="board-wrap">
+            <div id="game-board" class="game-board" role="grid" aria-label="?뚰듃由ъ뒪 寃뚯엫??></div>
+            <div class="board-scanline" aria-hidden="true"></div>
+            <div id="game-overlay" class="game-overlay is-hidden" aria-live="polite">
+              <div class="overlay-card">
+                <span class="overlay-icon" id="overlay-icon">??/span>
+                <p class="eyebrow" id="overlay-eyebrow">GAME OVER</p>
+                <h2 id="overlay-title">寃뚯엫 ?ㅻ쾭</h2>
+                <p id="overlay-message">釉붾줉??留??꾧퉴吏 ?볦??듬땲??</p>
+                <div class="overlay-result" id="overlay-result">理쒖쥌 ?먯닔 <strong>0</strong></div>
+                <button class="primary-button" id="overlay-action" type="button">?ㅼ떆 ?섍린</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-controls" aria-label="?곗튂 議곗옉">
+            <button class="control-button" data-action="left" type="button" aria-label="?쇱そ ?대룞">??/button>
+            <button class="control-button" data-action="rotate" type="button" aria-label="?쒓퀎 諛⑺뼢 ?뚯쟾">??/button>
+            <button class="control-button control-button--drop" data-action="hard" type="button" aria-label="利됱떆 ?⑥뼱?⑤━湲?>??span>DROP</span></button>
+            <button class="control-button" data-action="right" type="button" aria-label="?ㅻⅨ履??대룞">??/button>
+          </div>
+        </section>
+
+        <aside class="info-column" aria-label="寃뚯엫 ?뺣낫">
+          <section class="score-card panel-card">
+            <div class="card-label"><span class="label-dot"></span> SCORE</div>
+            <div class="score-value" id="score">000000</div>
+            <div class="score-meta">
+              <div><span>LEVEL</span><strong id="level">01</strong></div>
+              <div><span>LINES</span><strong id="lines">00</strong></div>
+            </div>
+          </section>
+
+          <section class="next-card panel-card">
+            <div class="card-heading">
+              <div>
+                <div class="card-label"><span class="label-dot label-dot--pink"></span> NEXT BLOCK</div>
+                <p>?ㅼ쓬 釉붾줉</p>
+              </div>
+              <span class="piece-index">01</span>
+            </div>
+            <div class="preview-wrap"><div id="next-preview" class="next-preview" aria-label="?ㅼ쓬 釉붾줉 誘몃━蹂닿린"></div></div>
+          </section>
+
+          <section class="controls-card panel-card">
+            <div class="card-label"><span class="label-dot label-dot--mint"></span> CONTROLS</div>
+            <div class="key-list">
+              <div class="key-row"><span>?대룞</span><div class="key-pair"><kbd>??/kbd><kbd>??/kbd></div></div>
+              <div class="key-row"><span>?뚯쟾</span><kbd>??/kbd></div>
+              <div class="key-row"><span>鍮좊Ⅴ寃??대━湲?/span><kbd>??/kbd></div>
+              <div class="key-row"><span>利됱떆 ?대━湲?/span><kbd class="wide-key">SPACE</kbd></div>
+              <div class="key-row"><span>?쇱떆?뺤?</span><kbd>P</kbd></div>
+            </div>
+          </section>
+
+          <div class="action-row">
+            <button class="secondary-button" id="pause-button" type="button"><span id="pause-icon">??/span><span id="pause-label">?쇱떆?뺤?</span></button>
+            <button class="secondary-button restart-button" id="restart-button" type="button"><span>??/span> ?ㅼ떆 ?쒖옉</button>
+          </div>
+          <p class="tip"><span>TIP</span> ??踰덉뿉 4以꾩쓣 吏?곕㈃ <strong>800 횞 ?덈꺼</strong> ?먯닔瑜??살뼱??</p>
+        </aside>
+      </main>
+
+      <footer class="footer-note"><span class="footer-line"></span><span>紐⑤뱺 釉붾줉? ??媛쒖쓽 ?뺤궗媛곹삎?쇰줈 ?대（?댁졇 ?덉뼱??/span><span class="footer-line"></span></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
